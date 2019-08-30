@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace MSTestLog
+namespace MSTestTool
 {
     public class MSTestLog
     {
