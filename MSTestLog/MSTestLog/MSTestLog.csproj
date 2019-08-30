@@ -3,9 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.2</Version>
+    <Company>My Company</Company>
+    <Authors>Sam</Authors>
+    <Description>用來在 MSTest 測試專案中，寫入 Log</Description>
+    <Copyright>MIT License</Copyright>
+    <PackageProjectUrl>https://github.com/chiisen/MSTestLog</PackageProjectUrl>
+    <PackageIconUrl>http://image.acmx.xyz/lindexi/2019427172218870</PackageIconUrl>
+    <PackageTags>MSTest</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
