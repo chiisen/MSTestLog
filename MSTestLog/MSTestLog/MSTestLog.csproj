@@ -3,15 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.0.4</AssemblyVersion>
-    <FileVersion>1.0.0.4</FileVersion>
-    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
+    <Version>1.0.6</Version>
     <Company>My Company</Company>
     <Authors>Sam</Authors>
     <Description>用來在 MSTest 測試專案中，寫入 Log</Description>
     <Copyright>MIT License</Copyright>
     <PackageProjectUrl>https://github.com/chiisen/MSTestLog</PackageProjectUrl>
-    <PackageIconUrl>http://image.acmx.xyz/lindexi/2019427172218870</PackageIconUrl>
+    <PackageIconUrl>https://chiisen.github.io/image/github.io/cat-icon.png</PackageIconUrl>
     <PackageTags>MSTest</PackageTags>
   </PropertyGroup>
 
