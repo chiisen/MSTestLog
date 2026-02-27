@@ -1,40 +1,43 @@
-﻿using System;
+﻿using System.Text;
 using System.IO;
-using System.Text;
 
-namespace MSTestTool
+namespace MSTestTool;
+
+public class MSTestLog
 {
-    public class MSTestLog
+    private static StringBuilder? _testOutputBuilder;
+    private static StringWriter? _testOutputWriter;
+    private static TextWriter? _originalWriter;
+
+    /// <summary>
+    /// 初始化
+    /// </summary>
+    public static void Initialize()
     {
-        private static StringBuilder _testOutputBuilder;
-        private static StringWriter _testOutputWriter;
-        private static TextWriter _originalWriter;
+        _testOutputBuilder = new StringBuilder();
+        _testOutputWriter = new StringWriter(_testOutputBuilder);
+        _originalWriter = Console.Out;
+        Console.SetOut(_testOutputWriter);
+    }
 
-        /// <summary>
-        /// 初始化
-        /// </summary>
-        public static void Initialize()
+    public static string WriteLine(string msg)
+    {
+        if (_originalWriter == null)
         {
-            _testOutputBuilder = new StringBuilder();
-            _testOutputWriter = new StringWriter(_testOutputBuilder);
-            _originalWriter = Console.Out;
-            Console.SetOut(_testOutputWriter);
+            Initialize();
         }
 
-        public static string WriteLine(string msg)
-        {
-            string ret_ = writeLine(_originalWriter, msg);
+        string ret_ = writeLine(_originalWriter!, msg);
 
-            Console.SetOut(_originalWriter);
-            _testOutputWriter.Dispose();
+        Console.SetOut(_originalWriter!);
+        _testOutputWriter?.Dispose();
 
-            return ret_;
-        }
+        return ret_;
+    }
 
-        private static string writeLine(TextWriter textWriter, string errorMessage)
-        {
-            textWriter.WriteLine(errorMessage);
-            return errorMessage;
-        }
+    private static string writeLine(TextWriter textWriter, string errorMessage)
+    {
+        textWriter.WriteLine(errorMessage);
+        return errorMessage;
     }
 }
